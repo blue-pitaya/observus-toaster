@@ -1,24 +1,21 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import "./style.css";
+import { createState, mount, on } from "observus";
+import { button, div } from "observus/tags";
+import { defaultToast, initToaster } from "./lib/toaster";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const { showToast, toastsContainer } = initToaster();
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const counter = createState<number>(0);
+
+const app = div(
+  toastsContainer,
+  button(
+    "Click",
+    on("click", () => {
+      counter.update((c) => c + 1);
+      showToast(defaultToast(counter.value.toString()));
+    }),
+  ),
+);
+
+mount(document.querySelector("#app")!, app);

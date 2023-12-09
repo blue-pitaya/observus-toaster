@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  observus:
+    specifier: file:/home/kodus/projects/observus/monorepo
+    version: file:../observus/monorepo
+
 devDependencies:
   '@types/jest':
     specifier: ^29.5.10
@@ -3345,3 +3350,8 @@ packages:
     optionalDependencies:
       commander: 9.5.0
     dev: true
+
+  file:../observus/monorepo:
+    resolution: {directory: ../observus/monorepo, type: directory}
+    name: observus
+    dev: false
