@@ -18,32 +18,11 @@
   "files": [
     "dist"
   ],
-  "module": "./dist/observus-core.js",
-  "main": "./dist/observus-core.cjs",
+  "module": "./dist/toaster.js",
+  "main": "./dist/toaster.js",
   "exports": {
     ".": {
-      "import": "./dist/observus-core.js",
-      "require": "./dist/observus-core.cjs"
-    },
-    "./helpers": {
-      "import": "./dist/observus-helpers.js",
-      "require": "./dist/observus-helpers.cjs"
-    },
-    "./tags": {
-      "import": "./dist/observus-tags.js",
-      "require": "./dist/observus-tags.cjs"
-    },
-    "./attributes": {
-      "import": "./dist/observus-attributes.js",
-      "require": "./dist/observus-attributes.cjs"
-    },
-    "./svg-tags": {
-      "import": "./dist/observus-svg-tags.js",
-      "require": "./dist/observus-svg-tags.cjs"
-    },
-    "./svg-attributes": {
-      "import": "./dist/observus-svg-attributes.js",
-      "require": "./dist/observus-svg-attributes.cjs"
+      "import": "./dist/toaster.js"
     }
   },
   "scripts": {
