@@ -8,9 +8,9 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: {
-        "observus-toaster": resolve(__dirname, "src/lib/toaster.ts"),
+        "toaster": resolve(__dirname, "src/lib/toaster.ts"),
       },
-      name: "observus-toaster",
+      name: "toaster",
     },
   },
   plugins: [
