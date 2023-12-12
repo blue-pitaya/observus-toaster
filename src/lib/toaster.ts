@@ -63,10 +63,12 @@ export function initToaster(
     });
   }
 
-  const toastElements = toasts.map((ts) => ts.map((t) => div(t.msg)));
+  const toastElements = toasts.map((ts) =>
+    ts.map((t) => div(cls(t.cls), styleObj(t.style), t.msg)),
+  );
   const container = div(
-    styleObj(containerStyle),
     cls(containerCls),
+    styleObj(containerStyle),
     tagsSignal(toastElements),
   );
 
